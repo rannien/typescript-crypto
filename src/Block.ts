@@ -7,13 +7,14 @@ class Block {
     private index: string,
     private data: Object,
     private previousHash: string,
-    private date: Date = new Date()
+    private date: Date = new Date(),
   ) {
     this.hash = this.generateHash();
   }
 
   private generateHash(): string {
-    const content = this.index + this.date.getTime() + this.previousHash + JSON.stringify(this.data);
+    const serializedData = JSON.stringify(this.data);
+    const content = this.index + this.date.getTime() + this.previousHash + serializedData;
     return sha256(content).toString();
   }
 }
