@@ -18,5 +18,9 @@
   "homepage": "https://github.com/rannien/typescript-crypto#readme",
   "devDependencies": {
     "typescript": "^4.7.3"
+  },
+  "dependencies": {
+    "@types/crypto-js": "^4.1.1",
+    "crypto-js": "^4.1.1"
   }
 }
